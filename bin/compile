@@ -13,7 +13,7 @@ OPT_DIR=$(cd "$BIN_DIR/../opt"; pwd)
 
 
 WKHTMLTOPDF_PKG="$OPT_DIR/wkhtmltopdf.tar.xz"
-WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf.tar.xz"
+WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/bin"
 
 
