@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -e
 
 BIN_PATH="$1/bin"
@@ -12,18 +10,21 @@ OPT_DIR=$(cd "$BIN_DIR/../opt"; pwd)
 
 
 
-WKHTMLTOPDF_PKG="$OPT_DIR/wkhtmltopdf.tar.xz"
-WKHTMLTOPDF_PATH="$TMP_PATH"
-WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/wkhtmltox/bin"
+WKHTMLTOPDF_PKG="$OPT_DIR/wkhtmltopdf"
+WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
+WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
 
 
 echo "-----> Unpacking Debian package"
-tar -xJf $WKHTMLTOPDF_PKG -C $WKHTMLTOPDF_PATH
+dpkg -x $WKHTMLTOPDF_PKG $WKHTMLTOPDF_PATH
 
 echo "-----> Setting permissions"
 chmod +x $WKHTMLTOPDF_BINARIES/*
 
 echo "-----> Moving binaries to the right place"
-cp $WKHTMLTOPDF_BINARIES/* $BIN_PATH/
+mv $WKHTMLTOPDF_BINARIES/* $BIN_PATH/
+
+echo "-----> Cleaning up"
+rm -rf $WKHTMLTOPDF_PATH
 
 exit 0
