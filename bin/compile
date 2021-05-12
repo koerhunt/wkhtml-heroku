@@ -18,15 +18,12 @@ WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/bin"
 
 
 echo "-----> Unpacking Debian package"
-tar -xJf $WKHTMLTOPDF_PKG $WKHTMLTOPDF_PATH
+tar -xJf $WKHTMLTOPDF_PKG
 
 echo "-----> Setting permissions"
-chmod +x $WKHTMLTOPDF_BINARIES/*
+chmod +x $WKHTMLTOPDF_PKG/bin/*
 
 echo "-----> Moving binaries to the right place"
-mv $WKHTMLTOPDF_BINARIES/* $BIN_PATH/
-
-echo "-----> Cleaning up"
-rm -rf $WKHTMLTOPDF_PATH
+mv $WKHTMLTOPDF_PKG/bin/* $BIN_PATH/
 
 exit 0
