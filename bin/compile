@@ -21,9 +21,9 @@ echo "-----> Unpacking Debian package"
 tar -xJf $WKHTMLTOPDF_PKG
 
 echo "-----> Setting permissions"
-chmod +x $WKHTMLTOPDF_PKG/bin/*
+chmod +x $OPT_DIR/bin/*
 
 echo "-----> Moving binaries to the right place"
-mv $WKHTMLTOPDF_PKG/bin/* $BIN_PATH/
+mv $OPT_DIR/bin/* $BIN_PATH/
 
 exit 0
