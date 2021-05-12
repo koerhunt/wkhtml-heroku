@@ -14,8 +14,6 @@ WKHTMLTOPDF_PKG="$OPT_DIR/wkhtmltopdf"
 WKHTMLTOPDF_PATH="$TMP_PATH/wkhtmltopdf"
 WKHTMLTOPDF_BINARIES="$WKHTMLTOPDF_PATH/usr/local/bin"
 
-apt-get install libjpeg62
-
 echo "-----> Unpacking Debian package"
 dpkg -x $WKHTMLTOPDF_PKG $WKHTMLTOPDF_PATH
 
